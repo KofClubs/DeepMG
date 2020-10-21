@@ -17,11 +17,11 @@ If you find our code useful for your research, please cite our paper:
 
 ### Training
 
-`python train.py --name t2rnet_tdrive_sample --dataroot ../data/tdrive_sample/learning --lam 0.2 --batch_size 8 --model t2rnet --display_id -1`
+`python train.py --name t2rnet_tdrive_sample --dataroot ../data/tdrive_sample/learning --lam 0.2 --batch_size 8 --model t2rnet --display_id -1 --gpu_ids -1`
 
 ### Inference
 
-`python test.py --name t2rnet_tdrive_sample --dataroot ../data/tdrive_sample/learning --lam 0.2 --model t2rnet`
+`python test.py --name t2rnet_tdrive_sample --dataroot ../data/tdrive_sample/learning --lam 0.2 --model t2rnet --gpu_ids -1`
 
 ### Region Concatenation
 
@@ -51,21 +51,30 @@ If you find our code useful for your research, please cite our paper:
 
 DeepMG uses the following dependencies with Python 3.6
 
-* gdal==2.3.2
-* opencv==3.3.1
-* rtree==0.8.3
-* networkx==2.3
-* scikit-image==0.16.2
-* pytorch==1.1.0
-* torchvision==0.3.0
+* gdal
+* opencv
+* rtree
+* networkx
+* scikit-image
+* pytorch
+* torchvision
+* cudatoolkit
+* tqdm
+* dominate
 
 Other packages can be easily installed using `conda install`, while the following scripts are recommended for `gdal`, `opencv` and `pytorch`.
 
-`conda install -c conda-forge gdal==2.3.2`
+`conda install -c conda-forge gdal`
 
-`conda install -c menpo opencv==3.3.1`
+`conda install -c menpo opencv`
 
-`conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=9.0 -c pytorch -c defaults -c numba/label/dev`
+`conda install pytorch torchvision cudatoolkit -c pytorch -c defaults -c numba/label/dev`
+
+`conda install networkx rtree tqdm`
+
+`conda install dominate`
+
+`conda install scikit-image`
 
 Note that `gdal` must be installed first, and a restart might be required after all installation.
 
