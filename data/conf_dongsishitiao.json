@@ -1,0 +1,25 @@
+{
+  "dataset": {
+    "dataset_name": "dongsishitiao",
+    "min_lat": 39.9233,
+    "min_lng": 116.4163,
+    "max_lat": 39.9413,
+    "max_lng": 116.4397,
+    "nb_rows": 1024,
+    "nb_cols": 1024
+  },
+  "feature_extraction": {
+    "nbhd_dist": 300,
+    "nbhd_size": 8,
+    "tile_pixel_size": 256,
+    "test_tile_row_min": 1,
+    "test_tile_row_max": 3,
+    "test_tile_col_min": 1,
+    "test_tile_col_max": 2
+  },
+  "topology_construction": {
+    "link_radius": 50,
+    "alpha": 1.4,
+    "min_supp": 5
+  }
+}

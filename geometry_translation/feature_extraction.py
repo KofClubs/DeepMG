@@ -1,6 +1,9 @@
 import os
 import sys
-sys.path.append('../tptk/')
+
+filePath = os.path.abspath(os.path.dirname(__file__))
+projPath = os.path.split(filePath)[0]
+sys.path.append(projPath)
 from tptk.common.road_network import load_rn_shp
 from tptk.common.trajectory import parse_traj_file
 from tptk.common.grid import Grid
@@ -92,7 +95,7 @@ def generate_dir_dist_data(traj_dir, grid_idx, feature_path):
         traj_list = parse_traj_file(os.path.join(traj_dir, filename))
         for traj in traj_list:
             for i in range(len(traj.pt_list) - 1):
-                cur_pt, next_pt = traj.pt_list[i], traj.pt_list[i+1]
+                cur_pt, next_pt = traj.pt_list[i], traj.pt_list[i + 1]
                 if MIN_DISTANCE_IN_METER < distance(cur_pt, next_pt) < MAX_DISTANCE_IN_METER:
                     try:
                         row_idx, col_idx = grid_idx.get_matrix_idx(cur_pt.lat, cur_pt.lng)
@@ -165,8 +168,8 @@ def generate_road_centerline_label(rn_path, grid_idx, label_path):
     centerline_img = np.zeros((grid_idx.row_num, grid_idx.col_num), dtype=np.uint8)
     for edge_key in tqdm(rn.edges):
         coords = rn.edges[edge_key]['coords']
-        for i in range(len(coords)-1):
-            start_node, end_node = coords[i], coords[i+1]
+        for i in range(len(coords) - 1):
+            start_node, end_node = coords[i], coords[i + 1]
             try:
                 y1, x1 = grid_idx.get_matrix_idx(start_node.lat, start_node.lng)
                 y2, x2 = grid_idx.get_matrix_idx(end_node.lat, end_node.lng)
@@ -182,8 +185,8 @@ def generate_road_region_label(centerline_path, radius, label_path):
     H, W = centerline_img.shape
     region_img = np.zeros(centerline_img.shape, dtype=np.uint8)
     for i, j in tqdm(list(zip(centerline_pixels[0], centerline_pixels[1]))):
-        for y in range(max(i-radius, 0), min(i+radius+1, H)):
-            for x in range(max(j-radius, 0), min(j+radius+1, W)):
+        for y in range(max(i - radius, 0), min(i + radius + 1, H)):
+            for x in range(max(j - radius, 0), min(j + radius + 1, W)):
                 region_img[y, x] = 255
     cv2.imwrite(os.path.join(label_path, 'region.png'), region_img)
 

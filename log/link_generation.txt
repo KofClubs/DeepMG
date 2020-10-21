@@ -1,0 +1,9 @@
+(DeepMG-KofClubs) [zhang@localhost topology_construction]$ python main.py --phase 2 --conf_path ../data/conf_dongsishitiao.json --results_path ../data/dongsishitiao/results/
+Namespace(conf_path='../data/conf_dongsishitiao.json', phase=2, results_path='../data/dongsishitiao/results/')
+# of nodes:2
+# of edges:1
+number of dead ends:2
+# of nodes:2
+# of edges:2
+# of nodes:2
+# of edges:2

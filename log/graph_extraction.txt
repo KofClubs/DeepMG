@@ -1,0 +1,17 @@
+(DeepMG-KofClubs) [zhang@localhost topology_construction]$ python main.py --phase 1 --conf_path ../data/conf_dongsishitiao.json --results_path ../data/dongsishitiao/results/
+Namespace(conf_path='../data/conf_dongsishitiao.json', phase=1, results_path='../data/dongsishitiao/results/')
+Identifying road nodes pixels... 
+# of road pixels:258
+258/258... done.
+Detecting road network component... 
+# of node pixels:4
+4/4... 
+# of directly connected segments:1
+unprocessed edge pixels:0
+# of nodes:2
+# of segments:1
+done.
+Constructing and saving road network... 
+# of nodes:2
+# of edges:1
+done.

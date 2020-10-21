@@ -1,0 +1,41 @@
+(DeepMG-KofClubs) [zhang@localhost geometry_translation]$ python test.py --name t2rnet_dongsishitiao --dataroot ../data/dongsishitiao/learning --lam 0.2 --model t2rnet --gpu_ids -1
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 4                             
+          checkpoints_dir: ./checkpoints                 
+                 dataroot: ../data/dongsishitiao/learning	[default: None]
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: -1                            	[default: 0]
+                init_gain: 0.02                          
+                init_type: normal                        
+                 is_train: False                         	[default: None]
+                      lam: 0.2                           
+                load_iter: 0                             	[default: 0]
+                load_size: None                          
+         max_dataset_size: inf                           
+                    model: t2rnet                        	[default: traj2rn]
+                     name: t2rnet_dongsishitiao          	[default: experiment_name]
+                net_trans: T2RNet_Trans                  
+               no_dropout: False                         
+                     norm: instance                      
+                    ntest: inf                           
+              num_threads: 4                             
+                output_nc: 1                             
+                    phase: test                          
+              results_dir: ./results/                    
+                   suffix:                               
+                  verbose: False                         
+----------------- End -------------------
+initialize network with normal
+initialize network with normal
+model [T2RNetModel] was created
+loading the model from ./checkpoints/t2rnet_dongsishitiao/latest_net_Trans.pth
+loading the model from ./checkpoints/t2rnet_dongsishitiao/latest_net_EM.pth
+---------- Networks initialized -------------
+[Network Trans] Total number of parameters : 63.089 M
+[Network EM] Total number of parameters : 0.009 M
+-----------------------------------------------
+loss	0.943955	precision	0.0357	recall	1.0000	f1	0.0690	iou	0.0357
+
