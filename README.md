@@ -72,7 +72,7 @@ Other packages can be easily installed using `conda install`, while the followin
 
 `conda install networkx rtree tqdm`
 
-`conda install dominate`
+`pip install dominate`
 
 `conda install scikit-image`
 
